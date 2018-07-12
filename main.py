@@ -95,13 +95,7 @@ class Handler(webapp2.RequestHandler):
 			# en
 			template = template + '-en.html'
 		"""
-		template = template + '-en.html'
-		# undo escaping of <b> and </b>
-		output = self.render_str(template, **kw).replace("&lt;b&gt;","<b>").replace("&lt;/b&gt;","</b>")
-		# undo escaping of <center> and </center>
-		output = output.replace("&lt;center&gt;","<center>").replace("&lt;/center&gt;","</center>")
-		# undo escaping of </a>, "> and < a href=\"
-		output = output.replace("&lt;/a&gt;","</a>").replace("&#34;&gt;","\">").replace("&lt;a href=&#34;","<a href=\"")
+		output = self.render_str(template, **kw)
 		self.write(output)
 
 
@@ -155,18 +149,18 @@ class ShowPage(Handler):
 		
 		return
 		
-class SearchPage(Handler):
+class MainPage(Handler):
 	def get(self):
 		# get search text
-		search_text = self.request.get('q')
+		display_confirmation_code = self.request.get('q')
 		
 		#self.response.out.write(self.request.headers.get('Accept-Language'))
-		self.render('search', search_text=search_text)
+		self.render('main.html', display_confirmation_code=display_confirmation_code)
 		 
 		
 app = webapp2.WSGIApplication([
     webapp2.Route(r'/<requested_uri>', handler=ShowPage),
-    webapp2.Route(r'/', handler=SearchPage),
+    webapp2.Route(r'/', handler=MainPage),
 ], debug=True)
 
 

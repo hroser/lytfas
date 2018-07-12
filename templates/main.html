@@ -95,8 +95,8 @@ margin-bottom: 15px
 <head>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="/favicon.ico">
-	<title>Wie lange dauert es?</title>
-	<meta name="description" content="Erfahren wie lange die Dinge dauern, ganz einfach auf www.wie-lange-dauert-es.de">
+	<title>Lytfas Display Network</title>
+	<meta name="description" content="description">
 	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css"></style>
@@ -111,39 +111,72 @@ margin-bottom: 15px
 	  gtag('config', 'UA-109506841-1');
 	  gtag('config', 'AW-960369895');
 	</script>
+	
+	<script>
+	function toggleFullScreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    }  
+  } else {  
+    if (document.cancelFullScreen) {  
+      document.cancelFullScreen();  
+    } else if (document.mozCancelFullScreen) {  
+      document.mozCancelFullScreen();  
+    } else if (document.webkitCancelFullScreen) {  
+      document.webkitCancelFullScreen();  
+    }  
+  }  
+	
+	}
+	</script>
 
 
 
 </head>
 
 <body>
-	<form id="search-form" method="GET" enctype="multipart/form-data">
+	
+	<form id="confirm-form" method="GET" enctype="multipart/form-data">
 	<br>
-	<h1 align="center">Wie lange dauert ... ?</h1>
+	<h1 align="center">Lytfas Display Network</h1>
 	<br>
 	<div class="centertopinfo">
 		<center>
 		<br>
-    <input type="text" style="font: 16px sans-serif; width: 260px;" name="q" value="{{search_text}}">
-    <br><br>
-    <button type="submit" id="button-search">Suche</button>
+		<br><br>
+		Lytfas-Display bestätigen:
+		<br><br>
+    <input type="text" style="font: 16px sans-serif; width: 260px;" name="q" value="{{display_confirmation_code}}">
+    <button type="submit" id="button-confirm-display">Bestätigen</button>
+		<br><br>
+	</form>
+		
+	<form id="new-display-form" method="POST" enctype="multipart/form-data">
+		Neues Display anlegen:
+		<br><br>
+    <button type="submit" id="button-create-display">Neues Lytfas-Display</button>
+		<br><br><br><br>
+		<input type="button" value="click to toggle fullscreen" onclick="toggleFullScreen()">
 		</center>
 		<br>
 	</div>
 		<br>
 		<br>
-		
+	</form>
+	
 		<div class="centerinfo">
 		<br><br>
-		If you want to report a problem with a py.gl page, please use the 'Report page' link at the bottom of the page or go directly to our report form:
+		If there are any issues with Lytfas, please contact us:
 		<br>
-		<a href="http://py.gl/r/report-page" style="color: black;">py.gl/r/report-page</a> 
-		<br><br>
-		If there are any other issues with py.gl, please contact us:
-		<br>
-		<a href="mailto:support@py.gl" style="color: black;">support@py.gl</a> 
+		<a href="mailto:lytfas@gmail.com" style="color: black;">lytfas@gmail.com</a> 
 		</div>
-	</form>
+
 	<br><br><br><br>
 </body>
 </html>
